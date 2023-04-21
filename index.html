@@ -18,7 +18,7 @@
             <div class="container py-4">
                 <h1>Mail List</h1>
                 <ul class="list-group list-group-flush">
-                    <li v-for="(el,index) in arrayMail" class="list-group-item">{{el}}</li>
+                    <li v-if="arrayMail.length == 10" v-for="(el,index) in arrayMail" class="list-group-item">{{el}}</li>
                   </ul>
             </div>
         </div>
