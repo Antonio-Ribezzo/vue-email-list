@@ -3,7 +3,6 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-      counter: 0,
       arrayMail: []
     }
   },
@@ -14,6 +13,16 @@ createApp({
       .then((res) => {
         this.arrayMail.push(res.data.response);
       })
+    }
+  },
+
+  methods:{
+    copyText(position) {
+      document.getElementById(`mail${position}`).select()
+      document.execCommand("copy");
+      document.getElementById(`group${position}`).innerHTML = `
+          <span class="badge text-bg-success">Copied to clipboard</span>
+        `
     }
   }
 
